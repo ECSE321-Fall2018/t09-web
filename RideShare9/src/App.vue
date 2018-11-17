@@ -38,7 +38,7 @@ export default {
 
 <style>
   body {
-    background-color: #F0F0F0;
+    background-color: #FFFFFF;
   }
   h1 {
     padding: 0;
