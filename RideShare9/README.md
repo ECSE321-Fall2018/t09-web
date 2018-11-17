@@ -2,6 +2,17 @@
 
 > rideshare9's webapp
 
+## Browser Support
+**IE**: ?
+
+**Safari**: Ok (with CORS enabled)
+
+**FireFox**: Ok
+
+**Chrome**: Not working
+
+**Opera**: Ok
+
 ## Build Setup
 
 ``` bash
