@@ -3,6 +3,9 @@
     <div id="nav">
       <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
     </div>
+    <button class="ui primary button">
+      Primary button
+    </button>
     <router-view @authenticated="setAuthenticated" />
   </div>
 </template>

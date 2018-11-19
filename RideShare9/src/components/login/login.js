@@ -1,5 +1,8 @@
 import axios from "axios";
+import Store from "./store.js";
+
 var config = require('../../../config')
+
 
 var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
 var backendUrl = 'http://' + config.dev.backendHost + ':' + config.dev.backendPort
@@ -7,7 +10,9 @@ var backendUrl = 'http://' + config.dev.backendHost + ':' + config.dev.backendPo
 var AXIOS = axios.create({
   baseURL:backendUrl,
   headers: {
-    //'Access-Control-Allow-Origin': frontendUrl
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Authorization',
+    'Access-Control-Expose-Headers':'Authorization'
     }
 })
 
@@ -24,31 +29,24 @@ export default {
   },
   methods: {
     login() {
-      /*var AUTH_TOKEN = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJib3NzeGllIiwiZXhwIjo5MjIzMzcyMDM2ODU0Nzc1fQ.PrB-Y3hY0MDZfrNwOlDt2eeHq4pvXVKYJ30L_b40SfPIFatXn9OFRzeu6rLL2wZGX6UgqTAxsnbS_Y38qEgDJg"
-      let config = {
-        headers: {
-          "Authorization":AUTH_TOKEN
-        }
-      }
-      */
-      AXIOS.get('/user/mainpg').then(function(response){
+      let self = this;
+      AXIOS.post('/login',{
+        username:self.input.username,
+        password:self.input.password
+      }).then(function(response){
+        self.$emit("authenticated",true);
+        self.$router.replace({ name: "Hello" });
         console.log(response);
+        Store.save(response.headers.authorization)
       }).catch(function(error){
         console.log(error);
       })
-      /*AXIOS.post('/user/sign-up',{
-        username: 'admin999',
-        password: '12345',
-        role: 'ROLE_ADMIN'
-      }).then(function (response){
-        console.log(response);
-      }).catch(function (error){
+      /*
+      AXIOS.get('/user/mainpg').then(function(response){
+        console.log("OK");
+      }).catch(function(error){
         console.log("wrong");
-      })*/
-
-
-
-
+      })
       if(this.input.username != "" && this.input.password != "") {
         if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
           this.$emit("authenticated", true);
@@ -60,7 +58,7 @@ export default {
         }
       } else {
         console.log("A username and password must be present");
-      }
+      }*/
     }
   }
 }

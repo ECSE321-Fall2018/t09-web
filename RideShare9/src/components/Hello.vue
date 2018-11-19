@@ -23,12 +23,16 @@
 </template>
 
 <script>
+  import Store from "./login/store.js"
 export default {
   name: 'hello',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted(){
+    console.log(Store.fetch())
   }
 }
 </script>
