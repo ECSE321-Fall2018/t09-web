@@ -14,7 +14,6 @@ export default {
   data() {
     return {
       trips: [],
-      renderedTrips: [],
       drivers: [],
       passengers: [],
       errorMessage: '',
