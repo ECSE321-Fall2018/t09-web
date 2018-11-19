@@ -1,4 +1,13 @@
+import axios from 'axios'
+var config = require('../../../config')
 
+var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
+var backendUrl = 'https://' + config.dev.backendHost
+
+var AXIOS = axios.create({
+  baseURL: backendUrl,
+  headers: {'Access-Control-Allow-Origin': frontendUrl}
+})
 
 export default {
   name: 'fleet',
@@ -8,96 +17,21 @@ export default {
       renderedTrips: [],
       drivers: [],
       passengers: [],
-      error: '',
-      adSearchInput: ''
+      errorMessage: '',
+      adSearchInput: '',
+      len: 0
     }
   },
   created: function() {
-    this.trips = [
-      {
-        "id": 10,
-        "title": "adv1",
-        "startTime": "2018-11-11 12:12:12",
-        "startLocation": "1100 Av du Docteur-Penfield",
-        "endLocation": null,
-        "tripStatus": "REGISTERING",
-        "seatsAvailable": 18,
-        "stops": [{
-            "id": 3,
-            "stopName": "3425 Rue University",
-            "price": 100
-          },
-          {
-            "id": 4,
-            "stopName": "8018 20e Av",
-            "price": 100
-          },
-          {
-            "id": 5,
-            "stopName": "11171 Rue Notre-Dame Est",
-            "price": 100
-          }
-        ],
-        "vehicle": {
-          "id": 2,
-          "licencePlate": "12345",
-          "model": "t80b",
-          "color": "white",
-          "maxSeat": 100,
-          "driver": 5
-        },
-        "driverUsername": "driver666"
-      },
-      {
-        "id": 12,
-        "title": "adv2",
-        "startTime": "2018-11-11 12:12:12",
-        "startLocation": "1100 Av du Docteur-Penfield",
-        "endLocation": null,
-        "tripStatus": "REGISTERING",
-        "seatsAvailable": 8,
-        "stops": [{
-            "id": 3,
-            "stopName": "3425 Rue University",
-            "price": 100
-          },
-          {
-            "id": 4,
-            "stopName": "8018 20e Av",
-            "price": 100
-          },
-          {
-            "id": 5,
-            "stopName": "11171 Rue Notre-Dame Est",
-            "price": 100
-          },
-          {
-            "id": 6,
-            "stopName": "3700 Rue Damien Gauthier",
-            "price": 100
-          },
-          {
-            "id": 7,
-            "stopName": "2315 Rue Pelletier",
-            "price": 100
-          },
-          {
-            "id": 8,
-            "stopName": "439 Rue Principale",
-            "price": 100
-          }
-        ],
-        "vehicle": {
-          "id": 2,
-          "licencePlate": "12345",
-          "model": "t80b",
-          "color": "white",
-          "maxSeat": 100,
-          "driver": 5
-        },
-        "driverUsername": "driver666"
-      }
-    ]
+    AXIOS.get('/adv/active-advertisements').then(response => {
+      //this.trips.push(response.data)
+      var data = response.data
+      this.len = data.length
+      this.trips = data
+      console.log(data);
+    }).catch(function(error) {
+      console.log(error)
+    })
   },
   computed: {
     filteredTrips: function() {
