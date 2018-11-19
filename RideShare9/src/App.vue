@@ -45,7 +45,6 @@ export default {
     margin-top: 0;
   }
   #app {
-    width: 1024px;
     margin: auto;
   }
 </style>
