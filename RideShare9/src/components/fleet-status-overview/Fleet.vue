@@ -4,8 +4,8 @@
 
     </b-row>
     <b-row>
-      <b-col class="rounded border border-secondary">
-        <h4 class="mx-auto" style="width: 170px">Advertisements</h4>
+      <b-col>
+        <h4 class="mx-auto" style="width: 127px">Active Trips</h4>
         <b-form-input v-model="adSearchInput" placeholder="Search" class="my-2"></b-form-input>
         <b-list-group>
           <b-list-group-item class="text-center" v-b-toggle="'collapse' + trip.id" href="#" v-for="trip in filteredTrips" :key="trip.id">

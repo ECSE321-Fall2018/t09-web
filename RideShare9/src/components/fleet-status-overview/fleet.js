@@ -18,18 +18,13 @@ export default {
       drivers: [],
       passengers: [],
       errorMessage: '',
-      adSearchInput: '',
-      len: 0
+      adSearchInput: ''
     }
   },
   created: function() {
     AXIOS.get('/adv/active-advertisements').then(response => {
-      //this.trips.push(response.data)
-      var data = response.data
-      this.len = data.length
-      this.trips = data
-      console.log(data);
-    }).catch(function(error) {
+      this.trips = response.data
+    }).catch(error => {
       console.log(error)
     })
   },
@@ -42,8 +37,8 @@ export default {
         }
         let stops = trip.stops
         for (var i = 0; i < stops.length; i++) {
-          if (stops[i].stopName.match(search) !== null) {
-            console.log('Success!')
+          if (stops[i].stopName.toLowerCase().match(search) !== null) {
+            //console.log('Success!')
             return true
           }
         }
