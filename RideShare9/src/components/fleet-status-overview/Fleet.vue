@@ -1,9 +1,34 @@
 <template lang="html">
-  <b-container>
+  <b-container class="p-4">
     <b-row>
-      <b-col>trip</b-col>
-      <b-col>driver</b-col>
-      <b-col>passenger</b-col>
+
+    </b-row>
+    <b-row>
+      <b-col class="rounded border border-secondary">
+        <h4 class="mx-auto" style="width: 170px">Advertisements</h4>
+        <b-form-input v-model="adSearchInput" placeholder="Search" class="my-2"></b-form-input>
+        <b-list-group>
+          <b-list-group-item class="text-center" v-b-toggle="'collapse' + trip.id" href="#" v-for="trip in filteredTrips" :key="trip.id">
+            <div class="font-weight-bold">{{trip.title}}</div>
+            <b-collapse accordion="ad-accordion" :id="'collapse'+trip.id">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Date and time</th>
+                    <td>{{trip.startTime}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Start location</th>
+                    <td>{{trip.startLocation}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </b-collapse>
+          </b-list-group-item>
+        </b-list-group>
+      </b-col>
+      <b-col class="rounded border border-secondary">driver</b-col>
+      <b-col class="rounded border border-secondary">passenger</b-col>
     </b-row>
   </b-container>
 </template>
