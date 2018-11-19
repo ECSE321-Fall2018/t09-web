@@ -37,7 +37,7 @@ export default {
         }
         let stops = trip.stops
         for (var i = 0; i < stops.length; i++) {
-          if (stops[i].stopName.toLowerCase().match(search) !== null) {
+          if (stops[i].stopName.toLowerCase().match(search.toLowerCase()) !== null) {
             //console.log('Success!')
             return true
           }
