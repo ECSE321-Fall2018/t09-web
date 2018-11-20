@@ -20,7 +20,7 @@ The following table explains what information is shown when a list item contains
 
 
 Information | Active Trips | Drivers | Passengers
-------| ------ | ------ | ------ | ------
+------| ------ | ------ | ------ 
 Title | Final Destination | Username | Username
 Upon Click | Date and Time, Start Location | Status | Status
 
