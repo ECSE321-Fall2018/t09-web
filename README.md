@@ -13,6 +13,13 @@
 
 **Opera**: Ok
 
+## Ranking Overview
+
+This view shows the ranking of all Drivers and Passengers, based on how many trips they have involved in 
+a specific time interval. The view also ranking of the most popular routes in this time interval, based on
+how many advertisements have choose this route. 
+
+
 ## Fleet Overview 
 
 This view shows the Active Trips (ones that have yet to be completed) along with all Drivers and Passengers. 
