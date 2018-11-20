@@ -15,14 +15,21 @@ export default {
     return {
       trips: [],
       drivers: [],
+      renderedDrivers: [],
       passengers: [],
       errorMessage: '',
-      adSearchInput: ''
+      adSearchInput: '',
+      driverSearchInput: ''
     }
   },
   created: function() {
     AXIOS.get('/adv/active-advertisements').then(response => {
       this.trips = response.data
+    }).catch(error => {
+      console.log(error)
+    })
+    AXIOS.get('/user/active-drivers').then(response => {
+      this.drivers = response.data
     }).catch(error => {
       console.log(error)
     })
@@ -43,6 +50,14 @@ export default {
         }
         return false
       })
+    },
+    filteredDrivers: function() {
+      let search = this.driverSearchInput
+      return this.drivers.filter(function(driver) {
+        if (driver.username.match(search) !== null) {
+          return true
+        }
+      }) 
     }
   }
 }
@@ -58,4 +73,10 @@ function Trip(id, title, startTime, startLocation, endLocation, tripStatus, seat
   this.stops = []
   this.vehicle = {}
   this.driverUsername = driverUsername
+}
+
+function Driver(id, username, status) {
+  this.id = id
+  this.username = username
+  this.status = status
 }

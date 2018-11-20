@@ -27,7 +27,25 @@
           </b-list-group-item>
         </b-list-group>
       </b-col>
-      <b-col class="rounded border border-secondary">driver</b-col>
+      <b-col>
+        <h4 class="mx-auto" style="width: 127 px">Drivers</h4>
+        <b-form-input v-model="driverSearchInput" placeholder="Search" class="my-2"></b-form-input>
+        <b-list-group>
+          <b-list-group-item class="text-center"  v-b-toggle="'collapse' + driver.id" href="#" v-for="driver in filteredDrivers" :key="driver.id">
+            <div class="font-weight-bold">{{driver.username}}</div>
+            <b-collapse accordion="ad-accordion" :id="'collapse'+driver.id">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Driver Status</th>
+                    <td>{{driver.status}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </b-collapse>
+          </b-list-group-item>
+        </b-list-group>
+        </b-col>
       <b-col class="rounded border border-secondary">passenger</b-col>
     </b-row>
   </b-container>
