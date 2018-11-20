@@ -29,7 +29,7 @@ export default {
     }).catch(error => {
       console.log(error)
     })
-    AXIOS.get('/user/active-users').then(response => {
+    AXIOS.get('/user/active-drivers').then(response => {
       this.drivers = response.data
     }).catch(error => {
       console.log(error)
@@ -76,7 +76,8 @@ function Trip(id, title, startTime, startLocation, endLocation, tripStatus, seat
   this.driverUsername = driverUsername
 }
 
-function Driver(id, username) {
+function Driver(id, username, status) {
   this.id = id
   this.username = username
+  this.status = status
 }
