@@ -13,6 +13,18 @@
 
 **Opera**: Ok
 
+## Fleet Overview 
+
+This view shows the Active Trips (ones that have yet to be completed) along with all Drivers and Passengers. 
+The following table explains what information is shown within a list item
+
+Information | Active Trips | Drivers | Passengers
+------| ------ | ------ | ------ 
+Title | Final Destination | Username | Username
+Upon Click | Date and Time, Start Location | Status | Status
+
+Driver and Passenger Status: On ride, standby
+
 ## Build Setup
 
 ``` bash
