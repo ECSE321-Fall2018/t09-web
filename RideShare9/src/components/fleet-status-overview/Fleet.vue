@@ -8,9 +8,9 @@
         <h4 class="mx-auto" style="width: 127px">Active Trips</h4>
         <b-form-input v-model="adSearchInput" placeholder="Search" class="my-2"></b-form-input>
         <b-list-group>
-          <b-list-group-item class="text-center" v-b-toggle="'collapse' + trip.id" href="#" v-for="trip in filteredTrips" :key="trip.id">
+          <b-list-group-item class="text-center" v-b-toggle="'advertCollapse' + trip.id" href="#" v-for="trip in filteredTrips" :key="trip.id">
             <div class="font-weight-bold">{{trip.title}}</div>
-            <b-collapse accordion="ad-accordion" :id="'collapse'+trip.id">
+            <b-collapse accordion="ad-accordion" :id="'advertCollapse'+trip.id">
               <table class="table">
                 <tbody>
                   <tr>
