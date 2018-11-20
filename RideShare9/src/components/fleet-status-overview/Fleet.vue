@@ -31,9 +31,9 @@
         <h4 class="mx-auto" style="width: 127 px">Drivers</h4>
         <b-form-input v-model="driverSearchInput" placeholder="Search" class="my-2"></b-form-input>
         <b-list-group>
-          <b-list-group-item class="text-center"  v-b-toggle="'collapse' + driver.id" href="#" v-for="driver in filteredDrivers" :key="driver.id">
+          <b-list-group-item class="text-center"  v-b-toggle="'driverCollapse' + driver.id" href="#" v-for="driver in filteredDrivers" :key="driver.id">
             <div class="font-weight-bold">{{driver.username}}</div>
-            <b-collapse accordion="ad-accordion" :id="'collapse'+driver.id">
+            <b-collapse accordion="ad-accordion" :id="'driverCollapse'+driver.id">
               <table class="table">
                 <tbody>
                   <tr>
