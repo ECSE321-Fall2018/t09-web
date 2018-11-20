@@ -1,23 +1,31 @@
 <template>
-  <div id="app">
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div id="login">
+  <div class="ui two column middle aligned very relaxed stackable grid">
+    <div class="column">
+      <div class="ui form">
+        <div class="field">
+          <label>username</label>
+          <div class="ui left icon input">
+            <input type="text" placeholder="account username">
+            <i class="user icon"></i>
+          </div>
+        </div>
+        <div class="field">
+          <label>password</label>
+          <div class="ui left icon input">
+            <input type="password">
+            <i class="lock icon"></i>
+          </div>
+        </div>
+        <div class="ui blue submit button">Login</div>
+      </div>
+    </div>
+    <div class="center aligned column">
+      <div class="ui big green labeled icon button">
+        <i class="signup icon"></i>
+        Join
+      </div>
+    </div>
   </div>
   </div>
 </template>
@@ -63,5 +71,13 @@ a {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#login {
+  width: 500px;
+  border: 1px solid #CCCCCC;
+  background-color: #FFFFFF;
+  margin: auto;
+  margin-top: 200px;
+  padding: 20px;
 }
 </style>

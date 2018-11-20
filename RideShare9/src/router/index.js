@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Login from '@/components/login/login.vue'
 import Fleet from '@/components/fleet-status-overview/Fleet.vue'
+import Ranking from '@/components/ranking/ranking.vue'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/fleet',
       name: 'Fleet',
       component: Fleet
+    },
+    {
+      path: '/ranking',
+      name: 'Ranking',
+      component: Ranking
     }
   ]
 })

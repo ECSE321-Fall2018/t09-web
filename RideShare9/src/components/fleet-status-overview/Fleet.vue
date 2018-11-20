@@ -1,7 +1,8 @@
 <template lang="html">
-  <b-container class="p-4">
-    <b-row>
 
+  <b-container class="p-4">
+    <button class="ui primary button" id="torankbutton" type="button" v-on:click="toranking()">Ranking</button>
+    <b-row>
     </b-row>
     <b-row>
       <b-col>

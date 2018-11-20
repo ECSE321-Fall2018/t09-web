@@ -19,6 +19,9 @@ var AXIOS = axios.create({
 
 export default {
   name: 'Login',
+  mounted(){
+    document.getElementById("errormsg").style.display = "none";
+  },
   data() {
     return {
       input: {
@@ -28,6 +31,12 @@ export default {
     }
   },
   methods: {
+    disappear(){
+      document.getElementById("errormsg").style.display = "none";
+    },
+    signupnotice(){
+      alert("Signup for admin is not open, please contact our company!");
+    },
     login() {
       let self = this;
       AXIOS.post('/login',{
@@ -35,18 +44,14 @@ export default {
         password:self.input.password
       }).then(function(response){
         self.$emit("authenticated",true);
-        self.$router.replace({ name: "Hello" });
+        self.$router.replace({ name: "Fleet" });
         console.log(response);
         Store.save(response.headers.authorization)
       }).catch(function(error){
         console.log(error);
+        document.getElementById("errormsg").style.display = "block";
       })
       /*
-      AXIOS.get('/user/mainpg').then(function(response){
-        console.log("OK");
-      }).catch(function(error){
-        console.log("wrong");
-      })
       if(this.input.username != "" && this.input.password != "") {
         if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
           this.$emit("authenticated", true);

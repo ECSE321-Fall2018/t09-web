@@ -21,6 +21,11 @@ export default {
       adSearchInput: ''
     }
   },
+  methods: {
+    toranking(){
+      this.$router.replace({ name: "Ranking" });
+    }
+  },
   created: function() {
     AXIOS.get('/adv/active-advertisements').then(response => {
       this.trips = response.data
