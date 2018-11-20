@@ -32,14 +32,14 @@
         <h4 class="mx-auto" style="width: 127 px">Drivers</h4>
         <b-form-input v-model="driverSearchInput" placeholder="Search" class="my-2"></b-form-input>
         <b-list-group>
-          <b-list-group-item class="text-center"  v-b-toggle="'driverCollapse' + driver.id" href="#" v-for="driver in filteredDrivers" :key="driver.id">
-            <div class="font-weight-bold">{{driver.username}}</div>
-            <b-collapse accordion="driver-accordion" :id="'driverCollapse'+driver.id">
+          <b-list-group-item class="text-center"  v-b-toggle="'driverCollapse' + user.id" href="#" v-for="user in filteredDrivers" :key="user.id">
+            <div class="font-weight-bold">{{user.username}}</div>
+            <b-collapse accordion="driver-accordion" :id="'driverCollapse'+user.id">
               <table class="table">
                 <tbody>
                   <tr>
                     <th scope="row">Driver Status</th>
-                    <td>{{driver.status}}</td>
+                    <td>{{user.status}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -47,7 +47,26 @@
           </b-list-group-item>
         </b-list-group>
         </b-col>
-      <b-col class="rounded border border-secondary">passenger</b-col>
+        <b-col>
+        <h4 class="mx-auto" style="width: 127 px">Passengers</h4>
+        <b-form-input v-model="passengerSearchInput" placeholder="Search" class="my-2"></b-form-input>
+        <b-list-group>
+          <b-list-group-item class="text-center"  v-b-toggle="'passengerCollapse' + user.id" href="#" v-for="user in filteredPassengers" :key="user.id">
+            <div class="font-weight-bold">{{user.username}}</div>
+            <b-collapse accordion="passenger-accordion" :id="'passengerCollapse'+user.id">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Passenger Status</th>
+                    <td>{{user.status}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </b-collapse>
+          </b-list-group-item>
+        </b-list-group>
+        </b-col>
+      
     </b-row>
   </b-container>
 </template>

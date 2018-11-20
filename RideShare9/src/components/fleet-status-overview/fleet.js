@@ -19,7 +19,8 @@ export default {
       passengers: [],
       errorMessage: '',
       adSearchInput: '',
-      driverSearchInput: ''
+      driverSearchInput: '',
+      passengerSearchInput: ''
     }
   },
   methods: {
@@ -35,6 +36,11 @@ export default {
     })
     AXIOS.get('/user/active-drivers').then(response => {
       this.drivers = response.data
+    }).catch(error => {
+      console.log(error)
+    })
+    AXIOS.get('/user/active-passengers').then(response => {
+      this.passengers = response.data
     }).catch(error => {
       console.log(error)
     })
@@ -58,8 +64,16 @@ export default {
     },
     filteredDrivers: function() {
       let search = this.driverSearchInput
-      return this.drivers.filter(function(driver) {
-        if (driver.username.match(search) !== null) {
+      return this.drivers.filter(function(user) {
+        if (user.username.match(search) !== null) {
+          return true
+        }
+      }) 
+    },
+    filteredPassengers: function() {
+      let search = this.passengerSearchInput
+      return this.passengers.filter(function(user) {
+        if (user.username.match(search) !== null) {
           return true
         }
       }) 
@@ -80,8 +94,9 @@ function Trip(id, title, startTime, startLocation, endLocation, tripStatus, seat
   this.driverUsername = driverUsername
 }
 
-function Driver(id, username, status) {
+function User(id, username, status) {
   this.id = id
   this.username = username
   this.status = status
 }
+
