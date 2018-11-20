@@ -10,7 +10,7 @@
         <b-list-group>
           <b-list-group-item class="text-center" v-b-toggle="'advertCollapse' + trip.id" href="#" v-for="trip in filteredTrips" :key="trip.id">
             <div class="font-weight-bold">{{trip.title}}</div>
-            <b-collapse accordion="ad-accordion" :id="'advertCollapse'+trip.id">
+            <b-collapse accordion="advert-accordion" :id="'advertCollapse'+trip.id">
               <table class="table">
                 <tbody>
                   <tr>
@@ -33,7 +33,7 @@
         <b-list-group>
           <b-list-group-item class="text-center"  v-b-toggle="'driverCollapse' + driver.id" href="#" v-for="driver in filteredDrivers" :key="driver.id">
             <div class="font-weight-bold">{{driver.username}}</div>
-            <b-collapse accordion="ad-accordion" :id="'driverCollapse'+driver.id">
+            <b-collapse accordion="driver-accordion" :id="'driverCollapse'+driver.id">
               <table class="table">
                 <tbody>
                   <tr>
