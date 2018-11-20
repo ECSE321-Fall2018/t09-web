@@ -16,8 +16,7 @@
 ## Fleet Overview 
 
 This view shows the Active Trips (ones that have yet to be completed) along with all Drivers and Passengers. 
-The following table explains what information is shown when a list item contains 
-
+The following table explains what information is shown within a list item
 
 Information | Active Trips | Drivers | Passengers
 ------| ------ | ------ | ------ 
