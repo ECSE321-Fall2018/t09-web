@@ -14,6 +14,13 @@ export default {
   data() {
     return {
       trips: [],
+      tripStatus: null,
+      tripStatuses: [
+        "All",
+        "Registering Passengers",
+        "Registration Complete",
+        "On Route"
+      ],
       drivers: [],
       renderedDrivers: [],
       passengers: [],
@@ -62,7 +69,7 @@ export default {
         if (driver.username.match(search) !== null) {
           return true
         }
-      }) 
+      })
     }
   }
 }

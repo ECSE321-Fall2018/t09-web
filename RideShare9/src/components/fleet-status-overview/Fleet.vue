@@ -1,12 +1,12 @@
 <template lang="html">
 
   <b-container class="p-4">
-    <button class="ui primary button" id="torankbutton" type="button" v-on:click="toranking()">Ranking</button>
     <b-row>
+      <b-button variant="primary" id="torankbutton" type="button" v-on:click="toranking()">Rankings</b-button>
     </b-row>
     <b-row>
       <b-col>
-        <h4 class="mx-auto" style="width: 127px">Active Trips</h4>
+        <h2 class="mx-auto" style="width: 130px;">Active Trips</h2>
         <b-form-input v-model="adSearchInput" placeholder="Search" class="my-2"></b-form-input>
         <b-list-group>
           <b-list-group-item class="text-center" v-b-toggle="'advertCollapse' + trip.id" href="#" v-for="trip in filteredTrips" :key="trip.id">
@@ -29,8 +29,11 @@
         </b-list-group>
       </b-col>
       <b-col>
-        <h4 class="mx-auto" style="width: 127 px">Drivers</h4>
+        <h2 class="mx-auto" style="width: 82px;">Drivers</h2>
         <b-form-input v-model="driverSearchInput" placeholder="Search" class="my-2"></b-form-input>
+        <b-form inline>
+        
+        </b-form>
         <b-list-group>
           <b-list-group-item class="text-center"  v-b-toggle="'driverCollapse' + driver.id" href="#" v-for="driver in filteredDrivers" :key="driver.id">
             <div class="font-weight-bold">{{driver.username}}</div>
