@@ -1,5 +1,5 @@
 <template>
-  <div id="login">
+  <div id="login" >
     <div class="ui two column middle aligned very relaxed stackable grid">
       <div class="column">
         <div class="ui form">

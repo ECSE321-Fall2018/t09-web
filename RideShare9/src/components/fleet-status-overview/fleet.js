@@ -62,7 +62,7 @@ export default {
         if (driver.username.match(search) !== null) {
           return true
         }
-      }) 
+      })
     }
   }
 }

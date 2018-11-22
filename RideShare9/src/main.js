@@ -7,7 +7,6 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '../node_modules/semantic-ui-css/semantic.min.css'
-import semantic from 'semantic'
 
 Vue.use(BootstrapVue)
 
