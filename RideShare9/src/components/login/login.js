@@ -45,7 +45,6 @@ export default {
       }).then(function(response){
         self.$emit("authenticated",true);
         self.$router.replace({ name: "Fleet" });
-        console.log(response);
         Store.save(response.headers.authorization)
       }).catch(function(error){
         console.log(error);

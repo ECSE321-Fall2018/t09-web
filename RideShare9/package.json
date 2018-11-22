@@ -21,11 +21,6 @@
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "popper.js": "^1.12.9",
-<<<<<<< HEAD
-    "semantic-ui-calendar": "0.0.8",
-=======
-    "semantic": "0.0.1",
->>>>>>> branch2
     "semantic-ui-css": "^2.4.1",
     "vue": "^2.5.2",
     "vue-date-pick": "^1.0.4",

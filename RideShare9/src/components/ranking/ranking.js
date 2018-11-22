@@ -30,18 +30,21 @@ export default {
     }
   },
   created(){
-    this.fetchdriver("1000-10-10 11:11:11","4444-11-11 11:11:11")
-    this.fetchpassenger("1000-10-10 11:11:11","4444-11-11 11:11:11")
-    console.log("created!");
-  },
-  mounted(){
-    console.log("mounted!");
+    this.$emit("authenticated",true);
+    this.fetchdriver("1111-1-11 11:11:11","4444-5-11 11:11:11")
+    this.fetchpassenger("1111-1-11 11:11:11","4444-5-11 11:11:11")
+    this.fetchbestadv("1111-1-11 11:11:11","4444-5-11 11:11:11")
   },
   methods: {
     search(){
-      this.fetchpassenger(this.startdate.getFullYear()+"-"+(this.startdate.getMonth()+1)+"-"+this.startdate.getDate()+" 00:00:00",
+      if(this.startdate==""||this.enddate==""){
+        alert("One of the field is empty! ")
+      }
+      this.fetchpassenger(this.startdate.getFullYear()+"-"+(this.startdate.getMonth()+1)+"-"+(this.startdate.getDate()-1)+" 00:00:00",
         this.enddate.getFullYear()+"-"+(this.enddate.getMonth()+1)+"-"+this.enddate.getDate()+" 23:59:59")
-      this.fetchdriver(this.startdate.getFullYear()+"-"+(this.startdate.getMonth()+1)+"-"+this.startdate.getDate()+" 00:00:00",
+      this.fetchdriver(this.startdate.getFullYear()+"-"+(this.startdate.getMonth()+1)+"-"+(this.startdate.getDate()-1)+" 00:00:00",
+        this.enddate.getFullYear()+"-"+(this.enddate.getMonth()+1)+"-"+this.enddate.getDate()+" 23:59:59")
+      this.fetchbestadv(this.startdate.getFullYear()+"-"+(this.startdate.getMonth()+1)+"-"+(this.startdate.getDate()-1)+" 00:00:00",
         this.enddate.getFullYear()+"-"+(this.enddate.getMonth()+1)+"-"+this.enddate.getDate()+" 23:59:59")
     },
     fetchdriver(starttime,endtime){
@@ -50,7 +53,6 @@ export default {
         startTimeX:starttime,
         startTimeY:endtime
       }).then(function(response){
-        console.log(response.data[1].best)
         self.drivers = response.data
       }).catch(function(error){
         console.log(error)
@@ -67,9 +69,19 @@ export default {
         console.log(error)
       })
     },
+    fetchbestadv(starttime,endtime){
+      let self = this;
+      AXIOS.post('/adv/get-top-adv',{
+        startTimeX: starttime,
+        startTimeY: endtime
+      }).then(function(response){
+        self.trips = response.data
+      }).catch(function(error){
+        console.log(error)
+      })
+    },
     tofleet(){
       this.$router.replace({ 'name':"Fleet"})
-
     }
   }
 }

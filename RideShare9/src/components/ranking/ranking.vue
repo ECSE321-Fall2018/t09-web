@@ -1,11 +1,10 @@
 <template>
   <b-container class="p-4">
-  <button class="ui primary button" id="tofleetbutton" type="button" v-on:click="tofleet()">Fleet</button>
     <b-row>
+      <b-button variant="primary" id="tofleetbutton" type="button" v-on:click="tofleet()">Fleet</b-button>
     </b-row>
     <b-row>
       <b-col>
-        <h4 class="mx-auto" style="width: 127px">Top popular routes</h4>
         <datepicker
           id="startdatepicker"
           v-model="startdate"
@@ -16,19 +15,16 @@
           v-bind:bootstrap-styling="true"
           v-bind:full-month-name="true"
         ></datepicker>
+        <h4 class="mx-auto" style="width: 127px">Top popular routes</h4>
 
         <b-list-group>
-          <b-list-group-item class="text-center" v-b-toggle="'advertCollapse' + trip.count" href="#" v-for="trip in drivers" :key="trip.count">
-            <div class="font-weight-bold">{{trip.count}}</div>
-            <b-collapse accordion="advert-accordion" :id="'advertCollapse'+trip.count">
+          <b-list-group-item class="text-center" v-b-toggle="'advertCollapse' + index" href="#" v-for="(trip, index) in trips" :key="index">
+            <div class="font-weight-bold">From {{trip.start}} to {{trip.end}}</div>
+            <b-collapse accordion="advert-accordion" :id="'advertCollapse'+index">
               <table class="table">
                 <tbody>
                 <tr>
-                  <th scope="row">Date and time</th>
-                  <td>{{trip.count}}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Start location</th>
+                  <th scope="row">Trips completed on this route</th>
                   <td>{{trip.count}}</td>
                 </tr>
                 </tbody>
@@ -39,7 +35,6 @@
 
       </b-col>
       <b-col>
-        <h4 class="mx-auto" style="width: 127px">Top drivers</h4>
         <datepicker
           id="enddatepicker"
           v-model="enddate"
@@ -52,15 +47,16 @@
           v-bind:full-month-name="true"
         >
         </datepicker>
+        <h4 class="mx-auto" style="width: 127px">Top drivers</h4>
         <b-list-group>
           <b-list-group-item class="text-center"  v-b-toggle="'driverCollapse' + driver.best.id" href="#" v-for="driver in drivers" :key="driver.best.id">
-            <div class="font-weight-bold">{{driver.best.id}}</div>
+            <div class="font-weight-bold">{{driver.best.username}}</div>
             <b-collapse accordion="driver-accordion" :id="'driverCollapse'+driver.best.id">
               <table class="table">
                 <tbody>
                 <tr>
-                  <th scope="row">Driver Status</th>
-                  <td>{{driver.best.id}}</td>
+                  <th scope="row">Trips involved</th>
+                  <td>{{driver.count}}</td>
                 </tr>
                 </tbody>
               </table>
@@ -70,7 +66,6 @@
 
       </b-col>
       <b-col>
-        <h4 id="topdriver" class="mx-auto" style="width: 127px">Top drivers</h4>
         <div class="ui animated button" tabindex="0"
              id="searchbutton"
              type="button"
@@ -80,15 +75,17 @@
             <i class="search icon"></i>
           </div>
         </div>
+        <h4 id="topdriver" class="mx-auto" style="width: 127px">Top passengers</h4>
+
         <b-list-group>
-          <b-list-group-item class="text-center"  v-b-toggle="'passengerCollapse' + driver.id" href="#" v-for="driver in passengers" :key="driver.count">
-            <div class="font-weight-bold">{{driver.username}}</div>
-            <b-collapse accordion="passenger-accordion" :id="'passengerCollapse'+driver.id">
+          <b-list-group-item class="text-center"  v-b-toggle="'passengerCollapse' + passenger.best.id" href="#" v-for="passenger in passengers" :key="passenger.best.id">
+            <div class="font-weight-bold">{{passenger.best.username}}</div>
+            <b-collapse accordion="passenger-accordion" :id="'passengerCollapse'+passenger.best.id">
               <table class="table">
                 <tbody>
                 <tr>
-                  <th scope="row">Passenger Status</th>
-                  <td>{{driver.status}}</td>
+                  <th scope="row">Trips involved</th>
+                  <td>{{passenger.count}}</td>
                 </tr>
                 </tbody>
               </table>
