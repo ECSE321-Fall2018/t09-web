@@ -70,16 +70,29 @@
                   </tbody>
                 </table>
                 <div v-if="trip.vehicle !== null">
-                  <span class="font-italic">Vehicle</span>
+                  <span class="font-weight-bold">Vehicle</span>
                   <table class="table">
                     <tbody>
                       <tr>
                         <th scope="row">Model</th>
                         <td>{{trip.vehicle.model}}</td>
                       </tr>
+                      <tr>
+                        <th scope="row">Colour</th>
+                        <td>{{trip.vehicle.color}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"># of Seats</th>
+                        <td>{{trip.vehicle.maxSeat}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">License Plate</th>
+                        <td>{{trip.vehicle.licencePlate}}</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
+
               </b-collapse>
             </b-list-group-item>
           </b-list-group>
