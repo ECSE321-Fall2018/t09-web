@@ -92,7 +92,19 @@
                     </tbody>
                   </table>
                 </div>
-
+                <span class="font-weight-bold">Stops</span>
+                <table class="table">
+                  <tbody v-for="stop in trip.stops">
+                      <tr>
+                        <th scope="row">Location</th>
+                        <td>{{stop.stopName}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Price</th>
+                        <td>{{stop.price}}</td>
+                      </tr>
+                  </tbody>
+                </table>
               </b-collapse>
             </b-list-group-item>
           </b-list-group>
