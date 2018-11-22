@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       trips: [],
-      tripStatus: null,
+      tripStatus: 'All',
       tripStatuses: [
         "All",
         "Registering Passengers",
@@ -31,8 +31,11 @@ export default {
     }
   },
   methods: {
-    toranking(){
+    toranking: function(){
       this.$router.replace({ name: "Ranking" });
+    },
+    translateTripStatus: function(status) {
+      return statusTransate[status];
     }
   },
   created: function() {
@@ -55,14 +58,18 @@ export default {
   computed: {
     filteredTrips: function() {
       let search = this.adSearchInput
+      let selectedStatus = this.tripStatus
+      let statusList = this.tripStatuses
       return this.trips.filter(function(trip) {
+        if (selectedStatus !== statusList[0] && trip.tripStatus !== statusMap[selectedStatus]) {
+          return false
+        }
         if (trip.title.match(search) !== null) {
           return true
         }
         let stops = trip.stops
         for (var i = 0; i < stops.length; i++) {
           if (stops[i].stopName.toLowerCase().match(search.toLowerCase()) !== null) {
-            //console.log('Success!')
             return true
           }
         }
@@ -75,7 +82,7 @@ export default {
         if (user.username.match(search) !== null) {
           return true
         }
-      }) 
+      })
     },
     filteredPassengers: function() {
       let search = this.passengerSearchInput
@@ -107,3 +114,14 @@ function User(id, username, status) {
   this.status = status
 }
 
+var statusMap = {
+  'Registering Passengers' : 'REGISTERING',
+  'Registration Complete' : 'CLOSED',
+  'On Route' : 'ON_RIDE'
+}
+
+var statusTransate = {
+  'REGISTERING' : 'Registering Passengers',
+  'CLOSED' : 'Registration Complete',
+  'ON_RIDE' : 'On Route'
+}
