@@ -64,7 +64,7 @@ export default {
         if (selectedStatus !== statusList[0] && trip.tripStatus !== statusMap[selectedStatus]) {
           return false
         }
-        if (trip.title.match(search) !== null) {
+        if (trip.title.toLowerCase().match(search.toLowerCase()) !== null) {
           return true
         }
         let stops = trip.stops

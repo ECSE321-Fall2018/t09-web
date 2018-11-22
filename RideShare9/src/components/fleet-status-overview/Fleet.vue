@@ -30,7 +30,7 @@
           <h2 class="mx-auto" style="width: 127 px">Passengers</h2>
         </b-row>
         <b-row>
-        <b-form-input v-model="passengerSearchInput" placeholder="Search" class="my-2"></b-form-input>
+          <b-form-input v-model="passengerSearchInput" placeholder="Search" class="my-2"></b-form-input>
         </b-row>
       </b-col>
     </b-row>
@@ -69,12 +69,17 @@
                     </tr>
                   </tbody>
                 </table>
-                <span class="font-italic">Vehicle</span>
-                <table class="table">
-                  <tbody>
-
-                  </tbody>
-                </table>
+                <div v-if="trip.vehicle !== null">
+                  <span class="font-italic">Vehicle</span>
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Model</th>
+                        <td>{{trip.vehicle.model}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </b-collapse>
             </b-list-group-item>
           </b-list-group>
