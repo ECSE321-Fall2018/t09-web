@@ -79,7 +79,7 @@ export default {
     filteredDrivers: function() {
       let search = this.driverSearchInput
       return this.drivers.filter(function(user) {
-        if (user.username.match(search) !== null) {
+        if (user.username.toLowerCase().match(search.toLowerCase()) !== null) {
           return true
         }
       })
@@ -87,7 +87,7 @@ export default {
     filteredPassengers: function() {
       let search = this.passengerSearchInput
       return this.passengers.filter(function(user) {
-        if (user.username.match(search) !== null) {
+        if (user.username.toLowerCase().match(search.toLowerCase()) !== null) {
           return true
         }
       })
