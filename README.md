@@ -3,13 +3,15 @@
 > rideshare9's webapp
 
 ## Browser Support
+**Make sure adblockers are turned off**
+
 **IE**: ?
 
 **Safari**: Ok (with CORS enabled)
 
 **FireFox**: Ok
 
-**Chrome**: Not working
+**Chrome**: Not working (Fleet Overview excepted)
 
 **Opera**: Ok
 
@@ -23,14 +25,26 @@ how many advertisements have choose this route.
 ## Fleet Overview 
 
 This view shows the Active Trips (ones that have yet to be completed) along with all Drivers and Passengers. 
-The following table explains what information is shown within a list item
+
+The Fleet Overview is divided into three columns: Trips, Drivers, and Passengers.
+#### Trips
+- List all currently active trips created on the RideShare App.
+- Case-insensitive searching.
+- Trip status filtering (All, Registering Passengers, Registration Complete, On Route).
+- When a trip is clicked on, a panel displaying information on the trip becomes visible.
+#### Drivers and Passengers
+- Lists all currently active drivers and passengers signed up on the RideShare App.
+- Case-insensitive searching.
+- When a driver or passenger is clicked on, a panel displaying information on the trip becomes visible.
 
 Information | Active Trips | Drivers | Passengers
 ------| ------ | ------ | ------ 
-Title | Final Destination | Username | Username
-Upon Click | Date and Time, Start Location | Status | Status
+Title | Trip Title | Username | Username
+Upon Click | Driver, Date and Time, Start Location, End Location, Seats Remaining, Status, Vehicle Information, Stops | Status | Status
 
-Driver and Passenger Status: On ride, standby
+Trip Statuses: All, Registering Passengers, Registration Complete, On Route
+
+Driver and Passenger Statuses: On ride, standby
 
 ## Build Setup
 
