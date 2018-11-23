@@ -4,13 +4,14 @@ import Store from "./store.js";
 var config = require('../../../config')
 
 
-var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
+// var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
+var frontendUrl = 'https://' + config.dev.productionHost
 var backendUrl = 'https://' + config.dev.backendHost
 
 var AXIOS = axios.create({
-  baseURL:backendUrl,
+  baseURL: backendUrl,
   headers: {
-    'Access-Control-Allow-Origin': 'https://ride-sharer2.herokuapp.com',
+    'Access-Control-Allow-Origin': frontendUrl,
     'Access-Control-Allow-Headers': 'Authorization',
     'Access-Control-Expose-Headers':'Authorization'
     }

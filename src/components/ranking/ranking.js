@@ -4,13 +4,14 @@ import Datepicker from 'vuejs-datepicker';
 
 var config = require('../../../config')
 
-var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
+// var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
+var frontendUrl = 'https://' + config.dev.productionHost
 var backendUrl = 'https://' + config.dev.backendHost
 
 var AXIOS = axios.create({
   baseURL: backendUrl,
   headers: {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': frontendUrl,
     'Access-Control-Allow-Headers': 'Authorization',
     'Access-Control-Expose-Headers':'Authorization',
     'Authorization':Store.fetch()

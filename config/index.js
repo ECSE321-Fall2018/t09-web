@@ -25,6 +25,7 @@ module.exports = {
     env: require('./dev.env'),
     port: 8087,
     host:  'localhost',
+    productionHost: 'ride-sharer.herokuapp.com',
     backendHost: 'mysterious-hollows-14613.herokuapp.com',
     backendPort: 80,
     autoOpenBrowser: true,

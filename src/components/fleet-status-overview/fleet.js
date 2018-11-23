@@ -1,12 +1,13 @@
 import axios from 'axios'
 var config = require('../../../config')
 
-var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
+// var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
+var frontendUrl = 'https://' + config.dev.productionHost
 var backendUrl = 'https://' + config.dev.backendHost
 
 var AXIOS = axios.create({
   baseURL: backendUrl,
-  headers: {'Access-Control-Allow-Origin': 'https://ride-sharer2.herokuapp.com'}
+  headers: {'Access-Control-Allow-Origin': frontendUrl}
 })
 
 export default {
