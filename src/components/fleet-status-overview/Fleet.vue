@@ -2,12 +2,16 @@
 
   <b-container class="p-4">
     <b-row>
-      <b-button variant="primary" id="torankbutton" type="button" v-on:click="toranking()">Rankings</b-button>
-    </b-row>
+      <div class="circular ui animated primary button" variant="primary" tabindex="0" id="torankbutton" type="button" v-on:click="toranking()">
+        <div class="visible content">Ranking</div>
+        <div class="hidden content">
+          <i class="left arrow icon"></i>
+        </div>
+      </div></b-row>
     <b-row>
       <b-col>
         <b-row>
-          <h2 class="mx-auto" style="width: 130px;">Active Trips</h2>
+          <h2 class="mx-auto" style="width: 180px;"><i class="map icon"></i> Active Trips</h2>
         </b-row>
         <b-row class="form-group">
           <b-form class="w-100">
@@ -17,17 +21,30 @@
           </b-form>
         </b-row>
       </b-col>
+      <b-col>
+        <div class="ui vertical divider">
+          <i class="angle double right icon"></i>
+        </div>
+      </b-col>
       <b-col class="mx-2">
         <b-row>
-          <h2 class="mx-auto" style="width: 82px;">Drivers</h2>
+          <h2 class="mx-auto" style="width: 180px;"><i class="car icon"></i> Drivers</h2>
         </b-row>
         <b-row class="form-group">
           <b-form-input v-model="driverSearchInput" placeholder="Search" class="my-2"></b-form-input>
         </b-row>
       </b-col>
+
+      <b-col>
+        <div class="ui vertical divider">
+          <i class="angle double right icon"></i>
+        </div>
+      </b-col>
+
       <b-col>
         <b-row>
-          <h2 class="mx-auto" style="width: 127 px">Passengers</h2>
+          <h2 class="mx-auto" style="width: 180px">
+            <i class="child icon"></i>Passengers</h2>
         </b-row>
         <b-row>
           <b-form-input v-model="passengerSearchInput" placeholder="Search" class="my-2"></b-form-input>
@@ -110,6 +127,10 @@
           </b-list-group>
         </b-row>
       </b-col>
+      <b-col>
+        <div class="ui vertical divider">
+        </div>
+      </b-col>
       <b-col class="mx-2">
         <b-row>
           <b-list-group class="w-100">
@@ -128,6 +149,10 @@
             </b-list-group-item>
           </b-list-group>
         </b-row>
+      </b-col>
+      <b-col>
+        <div class="ui vertical divider">
+        </div>
       </b-col>
       <b-col>
         <b-row>
