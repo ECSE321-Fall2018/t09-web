@@ -17,5 +17,11 @@ describe('fleet.vue', () => {
     expect(heading3).to.equal('Passengers');
   })
 
+  it('should be able to load data', () => {
+    const Constructor = Vue.extend(fleet);
+    const vm = new Constructor().$mount();
+    vm.create;
+    expect(vm.drivers.length).to.equal(0)
+  })
 
 })

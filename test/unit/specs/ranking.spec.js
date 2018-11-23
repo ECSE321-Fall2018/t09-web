@@ -11,5 +11,13 @@ describe('ranking.vue', () => {
     expect(heading1).to.equal(' Top popular routes');
   })
 
+  it('should be able to load data from backend', () => {
+    //instantiate widget
+    const Constructor = Vue.extend(ranking);
+    const vm = new Constructor().$mount();
+    //test data
+    vm.create;
+    expect(vm.drivers.length).to.equal(0)
+  })
 
 })
