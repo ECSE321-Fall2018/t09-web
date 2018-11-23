@@ -5,7 +5,7 @@ var config = require('../../../config')
 
 
 var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port
-var backendUrl = 'https://' + config.dev.backendHost + ':' + config.dev.backendPort
+var backendUrl = 'https://' + config.dev.backendHost
 
 var AXIOS = axios.create({
   baseURL:backendUrl,
