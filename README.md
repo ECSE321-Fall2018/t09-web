@@ -21,14 +21,13 @@
 
 ## Unit Test
 
-Please check the unit test with 
-npm run unit
+Please check the unit test with command 'npm run unit'
 
 ## Login
 
-Please login with:
-Username: boss6
-Password: 12345
+Please login with:  
+#### Username: boss6  
+#### Password: 12345
 
 ## Ranking Overview
 
