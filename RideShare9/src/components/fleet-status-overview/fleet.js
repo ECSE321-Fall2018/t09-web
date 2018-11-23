@@ -6,7 +6,7 @@ var backendUrl = 'https://' + config.dev.backendHost
 
 var AXIOS = axios.create({
   baseURL: backendUrl,
-  headers: {'Access-Control-Allow-Origin': frontendUrl}
+  headers: {'Access-Control-Allow-Origin': 'https://ride-sharer2.herokuapp.com/'}
 })
 
 export default {
