@@ -8,17 +8,17 @@ import Ranking from '@/components/ranking/ranking.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path:'/',
-      redirect:{
-        name:"login"
+    mode: 'history',
+  routes: [{
+      path: '/',
+      redirect: {
+        name: "login"
       }
     },
     {
-      path:'/',
-      name:'login',
-      component:Login
+      path: '/',
+      name: 'login',
+      component: Login
     },
     {
       path: '/hello',
