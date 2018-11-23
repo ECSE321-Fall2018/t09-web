@@ -1,7 +1,13 @@
 <template>
   <b-container class="p-4">
     <b-row>
-      <b-button variant="primary" id="tofleetbutton" type="button" v-on:click="tofleet()">Fleet</b-button>
+      <div class="circular ui animated primary button"
+           variant="primary" tabindex="0" id="tofleetbutton" type="button" v-on:click="tofleet()">
+        <div class="visible content">Fleet</div>
+        <div class="hidden content">
+          <i class="left arrow icon"></i>
+        </div>
+      </div>
     </b-row>
     <b-row>
       <b-col>
@@ -15,8 +21,8 @@
           v-bind:bootstrap-styling="true"
           v-bind:full-month-name="true"
         ></datepicker>
-        <h4 class="mx-auto" style="width: 127px">Top popular routes</h4>
-
+        <h4 id="toproutes" class="mx-auto" style="width: 280px">
+          <i class="map icon"></i> Top popular routes</h4>
         <b-list-group>
           <b-list-group-item class="text-center" v-b-toggle="'advertCollapse' + index" href="#" v-for="(trip, index) in trips" :key="index">
             <div class="font-weight-bold">From {{trip.start}} to {{trip.end}}</div>
@@ -47,7 +53,9 @@
           v-bind:full-month-name="true"
         >
         </datepicker>
-        <h4 class="mx-auto" style="width: 127px">Top drivers</h4>
+        <h4 id="toppdriver" class="mx-auto" style="width: 280px">
+          <i class="car icon"></i>
+          Top performing drivers</h4>
         <b-list-group>
           <b-list-group-item class="text-center"  v-b-toggle="'driverCollapse' + driver.best.id" href="#" v-for="driver in drivers" :key="driver.best.id">
             <div class="font-weight-bold">{{driver.best.username}}</div>
@@ -75,8 +83,9 @@
             <i class="search icon"></i>
           </div>
         </div>
-        <h4 id="topdriver" class="mx-auto" style="width: 127px">Top passengers</h4>
-
+        <h4 id="topdriver" class="mx-auto" style="width: 280px">
+          <i class="child icon"></i>
+          Top royal passengers</h4>
         <b-list-group>
           <b-list-group-item class="text-center"  v-b-toggle="'passengerCollapse' + passenger.best.id" href="#" v-for="passenger in passengers" :key="passenger.best.id">
             <div class="font-weight-bold">{{passenger.best.username}}</div>
@@ -108,5 +117,17 @@
   }
   #topdriver{
     text-align: center;
+    font-family: "Apple Symbols";
+    font-size: 27px
+  }
+  #toppdriver{
+    text-align: center;
+    font-family: "Apple Symbols";
+    font-size: 27px
+  }
+  #toproutes{
+    text-align: center;
+    font-family: "Apple Symbols";
+    font-size: 27px
   }
 </style>

@@ -35,7 +35,10 @@ export default {
       document.getElementById("errormsg").style.display = "none";
     },
     signupnotice(){
-      alert("Signup for admin is not open, please contact our company!");
+      alert("Signup for admin is not open, please contact our company! " +
+        "For Testing, Use:\n" +
+        "Username: boss6\n" +
+        "password: 12345");
     },
     login() {
       let self = this;

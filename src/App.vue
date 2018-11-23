@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
-    </div>
+      <router-link class="ui circular animated green button" v-if="authenticated" to="/login" v-on:click.native="logout()" replace>
+        <div class="visible content">Logout</div>
+        <div class="hidden content">
+          <i class="remove icon"></i>
+        </div>
+      </router-link></div>
     <router-view @authenticated="setAuthenticated" />
   </div>
 </template>
@@ -12,7 +16,7 @@ export default {
   name: 'app',
   data() {
     return {
-      authenticated: true,
+      authenticated: false,
       mockAccount: {
         username: "hello",
         password: "password"

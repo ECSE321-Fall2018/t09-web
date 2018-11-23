@@ -39,6 +39,7 @@ export default {
     }
   },
   created: function() {
+    this.$emit("authenticated",true);
     AXIOS.get('/adv/active-advertisements').then(response => {
       this.trips = response.data
     }).catch(error => {
