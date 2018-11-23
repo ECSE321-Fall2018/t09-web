@@ -2,7 +2,11 @@
 
 > rideshare9's webapp
 
-## Browser Support
+## Browser Support (deployed version on Heroku)
+**Should support all browsers**
+
+
+## Browser Support (under development mode - npm run dev)
 **Make sure adblockers are turned off**
 
 **IE**: ?
