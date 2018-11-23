@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import login from '@/components/login/login'
-import {mount} from 'vue-test-utils'
 
 describe('login.vue', () => {
   it('should be able to load', () => {
@@ -13,7 +12,6 @@ describe('login.vue', () => {
     //test password label
     const label2 = vm.$el.querySelectorAll('label')[1].textContent;
     expect(label2).to.equal('password');
-
   })
 
 
@@ -24,6 +22,5 @@ describe('login.vue', () => {
     //test password label
     const label = vm.$el.querySelectorAll('label')[1].textContent;
     expect(label).to.equal('password');
-
   })
 })
