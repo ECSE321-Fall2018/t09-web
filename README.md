@@ -19,6 +19,16 @@
 
 **Opera**: Ok
 
+## Unit Test
+
+Please check the unit test with command 'npm run unit'
+
+## Login
+
+Please login with:  
+#### Username: boss6  
+#### Password: 12345
+
 ## Ranking Overview
 
 This view shows the ranking of all Drivers and Passengers, based on how many trips they have involved in 
