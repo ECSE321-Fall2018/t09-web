@@ -18,8 +18,21 @@
 ## Ranking Overview
 
 This view shows the ranking of all Drivers and Passengers, based on how many trips they have involved in 
-a specific time interval. The view also ranking of the most popular routes in this time interval, based on
+a specific time interval. 
+The view also ranking of the most popular routes in this time interval, based on
 how many advertisements have choose this route. 
+
+#### Most popular routes
+- The Top popular routes section shows the most completed trip route based on their startlocation and destination, 
+regardless what specific stops they will drive by. 
+- When click on one of the routes, the number of trips completed on this route will be shown. 
+
+#### Drivers and Passengers
+- The top performing drivers section will show the list of drivers based on number of trips they have completed.
+- When click on one of the driver, the number of completed trips involved will be shown.
+- Note this list only considered the drivers that **have completed at least one trip**
+- The top royal passengers section will also show the list of passengers based on number of trips they have completed. 
+- Same as the drivers' section, this list only considered the passengers that **have completed at least one trip**.
 
 
 ## Fleet Overview 
