@@ -30,7 +30,7 @@
               <table class="table">
                 <tbody>
                 <tr>
-                  <th scope="row">Trips completed on this route</th>
+                  <th scope="row">Passenger flow on this route</th>
                   <td>{{trip.count}}</td>
                 </tr>
                 </tbody>
