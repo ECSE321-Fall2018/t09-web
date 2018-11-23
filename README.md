@@ -3,12 +3,16 @@
 > rideshare9's webapp
 https://ride-sharer.herokuapp.com/
 
+# Build System
+When a new commit is pushed to the master branch, it is Herok automatically starts installing the app's dependencies. Then runs the build script (postinstall in package.json). When the build finishes it deploys the app to the ride-sharer webapp.
+
+## Make sure adblockers are turned off!
 ## Browser Support (deployed version on Heroku)
 **Should support all browsers**
 
 
 ## Browser Support (under development mode - npm run dev)
-**Make sure adblockers are turned off**
+
 
 **IE**: ?
 
