@@ -4,7 +4,7 @@
       <div class="column">
         <div class="ui form">
           <div class="field">
-            <label>usernameTEST</label>
+            <label>username</label>
             <div class="ui left icon input">
               <input type="text" id="usernametext" name="username" v-on:focus="disappear()" v-model="input.username" placeholder="account username">
               <i class="user icon"></i>
