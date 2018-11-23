@@ -20,7 +20,7 @@
               <i class="lock icon"></i>
             </div>
           </div>
-          <div class="ui blue submit button" id="loginbutton" type="button" v-on:click="login()">Login</div>
+          <div class="ui blue submit button" id="loginbutton" v-on:click="login()">Login</div>
         </div>
       </div>
       <div class="center aligned column">

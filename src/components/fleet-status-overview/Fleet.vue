@@ -2,7 +2,7 @@
 
   <b-container class="p-4">
     <b-row>
-      <div class="circular ui animated primary button" variant="primary" tabindex="0" id="torankbutton" type="button" v-on:click="toranking()">
+      <div class="circular ui animated primary button" variant="primary" tabindex="0" id="torankbutton" v-on:click="toranking()">
         <div class="visible content">Ranking</div>
         <div class="hidden content">
           <i class="left arrow icon"></i>

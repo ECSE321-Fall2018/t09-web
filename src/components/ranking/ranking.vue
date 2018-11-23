@@ -2,7 +2,7 @@
   <b-container class="p-4">
     <b-row>
       <div class="circular ui animated primary button"
-           variant="primary" tabindex="0" id="tofleetbutton" type="button" v-on:click="tofleet()">
+           variant="primary" tabindex="0" id="tofleetbutton" v-on:click="tofleet()">
         <div class="visible content">Fleet</div>
         <div class="hidden content">
           <i class="left arrow icon"></i>
